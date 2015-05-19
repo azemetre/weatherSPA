@@ -4,7 +4,7 @@ require.config({
         'jquery': 'libs/jquery-1.11.2.min',
         'underscore': 'libs/underscore-1.8.3.min',
         'backbone': 'libs/backbone-1.2.0.min',
-        'bootstrap': 'libs'bootstrap'
+        'bootstrap': 'libs/bootstrap'
     },
 
     shim: {
@@ -27,4 +27,10 @@ require.config({
 
 });
 
-require();
+require([
+    'backbone'
+], function (Backbone) {
+    'use strict';
+
+    console.log(Backbone);
+});
