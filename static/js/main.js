@@ -24,13 +24,16 @@ require.config({
             ]
         }
     }
-
 });
 
 require([
-    'backbone'
-], function (Backbone) {
+    'backbone',
+    'app/app',
+    'bootstrap'
+], function (Backbone, App, bootstrap) {
     'use strict';
 
-    console.log(Backbone);
+    App.initialize();
+    console.log(App);
+
 });
