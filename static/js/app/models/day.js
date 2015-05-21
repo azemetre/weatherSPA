@@ -1,6 +1,6 @@
 define([
     'backbone',
-], function(Backbone) {
+], function (Backbone) {
     'use strict';
 
     var DayModel = Backbone.Model.extend({
