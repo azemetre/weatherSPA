@@ -4,7 +4,8 @@ require.config({
         'jquery': 'libs/jquery-1.11.2.min',
         'underscore': 'libs/underscore-1.8.3.min',
         'backbone': 'libs/backbone-1.0.0',
-        'bootstrap': 'libs/bootstrap'
+        'bootstrap': 'libs/bootstrap',
+        'backbone.localStorage': 'libs/backbone.localStorage'
     },
 
     shim: {
