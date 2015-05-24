@@ -31,3 +31,9 @@ body {
     float: left;
     margin-right: 20px;
 }
+
+.modal-body, .modal-title {
+    padding: 10px;
+    margin: 10px;
+    background: #FFF;
+}
