@@ -3,17 +3,26 @@ define([
     'underscore',
     'backbone',
     'app/collections/places',
-    'app/templates'
-], function ($, _, BackBone, PlacesCollection, Templates) {
+    'app/views/place'
+], function ($, _, Backbone, PlacesCollection, PlaceView) {
+
     'use strict';
 
-    var DashView = BackBone.View.extend({
+    var DashView = Backbone.View.extend({
 
         html: [
             '<h3>Dashboard page</h3>',
             '<div id="places-list" class="clearfix">Loading...</div>',
-            '<div id="dash-buttons"></div>'
+            '<div id="dash-buttons">',
+                '<button id="btn-add-new" type="button" class="btn btn-default">Add New</button>',
+            '</div>'
         ].join(''),
+
+        views: [],
+
+        events: {
+            'click #btn-add-new': 'addNewPlace'
+        },
 
         initialize: function() {
             this.$el.html(this.html);
@@ -21,7 +30,7 @@ define([
             this.$dashButtons = this.$('#dash-buttons');
 
             this.collection = new PlacesCollection([]);
-            this.listenTo(this.collection, 'change', this.render);
+            this.listenTo(this.collection, 'change destroy', this.render);
             this.collection.fetch();
 
             window.debug = {
@@ -30,20 +39,36 @@ define([
         },
 
         render: function() {
+            var that = this;
+            this.cleanUp();
+
             if (this.collection.length) {
 
-                var placesHtml = [];
-
                 this.collection.each(function (element, index, list) {
-                    placesHtml.push(Templates['place'](element.toJSON()));
+                    var place = new PlaceView({
+                        model: element,
+                        id: ['place-',element.get('countryCode'),'-',element.get('name')].join('')
+                    });
+                    that.$placesList.append(place.render().el);
+                    that.views.push(place);
                 });
-
-                this.$placesList.html(placesHtml.join(''));
-
+                
             } else {
-                this.$placesList.html('Sorry, there are no places to display. Why not add some?');
+                that.$placesList.html('Sorry, there are no places to display. Want to add some?');
             }
             return this;
+        },
+
+        addNewPlace: function(e) {
+
+        },
+
+        cleanUp: function() {
+            for (var i = 0; i<this.views.length; i++) {
+                this.views[i].remove();
+            }
+            this.views.length = 0;
+            this.$placesList.html('');
         }
 
     });
