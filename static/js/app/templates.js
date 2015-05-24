@@ -17,6 +17,25 @@ define([
         '</div>'
     ].join('');
 
+    Templates['day'] = [
+        '<div>',
+            '<img src="<%= icon_url %>" alt="" class="img-thumbnail">',
+            '<br /><%= conditions %>',
+        '</div>'
+    ].join('');
+
+    Templates['modal'] = [
+        '<div class="modal fade">',
+            '<div class="modal-dialog">',
+                '<div class="modal-content">',
+                    '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>',
+                    '<h4 class="modal-title"><%=title %></h4>',
+                '</div>',
+                '<div class="modal-body">test</div>',
+            '</div>',
+        '</div>'
+    ].join('');
+
     for (var tmpl in Templates) {
         if (Templates.hasOwnProperty(tmpl)) {
             Templates[tmpl] = _.template(Templates[tmpl]);
