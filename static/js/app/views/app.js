@@ -3,8 +3,9 @@ define([
     'underscore',
     'backbone',
     'app/views/dash',
-    'app/views/about'
-], function ($, _, BackBone, DashView, AboutView) {
+    'app/views/about',
+    'app/views/settings'
+], function ($, _, BackBone, DashView, AboutView, SettingsView) {
 
     'use strict';
 
@@ -20,10 +21,13 @@ define([
                 '</ul>',
                 '<p class="navbar-text pull-right"></p>',
             '</div>',
+            '<button type="button" id="btn-settings" class="btn btn-default" style="float: right; margin: 10px;">Settings</button>',
             '<div id="content"></div>'
         ].join(''),
 
-        events: {},
+        events: {
+            'click #btn-settings': 'openSettings'
+        },
 
         views: {},
 
@@ -49,7 +53,20 @@ define([
         render: function() {
             this.$el.css('background-color', this.model.get('backgroundColor'));
             this.$('.navbar-text').html(this.model.get('welcomeMessage'));
+
+            var tempType = this.model.get('celsius') ? 'celsius' : 'fahrenheit';
+            this.$el.removeClass('celsius fahrenheit');
+            this.$el.addClass(tempType);
             return this;
+        },
+
+        openSettings: function(e) {
+            var modal = new SettingsView({
+                title: 'Application Settings',
+                id: 'modal-settings',
+                model: this.model
+            });
+            modal.show();
         },
 
         setPage: function(page) {
