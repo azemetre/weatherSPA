@@ -14,7 +14,7 @@ define([
 
         html: [
             '<div class="navbar">',
-                '<a class="navbar-brand" href="#">Weather Watcher</a>',
+                '<a class="navbar-brand" href="#">Weather Peeks</a>',
                 '<ul class="nav navbar-nav">',
                     '<li id="nav-dash"><a href="#dash">Dashboard</a></li>',
                     '<li id="nav-about"><a href="#about">About</a></li>',
