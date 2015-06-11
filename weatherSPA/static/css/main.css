@@ -9,12 +9,39 @@ body {
 
 /* App View */
 #app-view {
+    background-color: #E53935;
     padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 /* Header */
+.navbar {
+    background-color: #B71C1C;
+    margin-top: -10px; 
+}
 #header {
     margin: 0 10px 10px 10px;
+}
+.navbar a.navbar-brand {
+    color: #FFFFFF;
+    outline: none;
+}
+p.navbar-text {
+    color: #FFFFFF;
+    outline: none;
+}
+.navbar ul li a {
+    color: rgba(255,255,255,.7);
+    background-color: #;
+    outline: none;
+    text-decoration: none;
+    transition: 0.5s ease-in-out;
+}
+.navbar ul li a:hover, .navbar ul li a:focus {
+    color: rgba(0,0,0,.54);
+    background-color: #FFCDD2;
+    text-decoration: underline;
+    margin: -5px;
 }
 
 /* Page Views */
