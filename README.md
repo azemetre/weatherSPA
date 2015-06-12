@@ -1,12 +1,13 @@
 Weather Peeks
 =========================
-A single-page application to retrieve 5-day forecast for a user selected city.
+A single-page application to retrieve 4-day forecast for a user selected city.
 
 Future Goals
 ------------
 <ul> 
     <li>Enhance UI/UX</li>
     <li>Implement a live version of this project</li>
+    <li>Make SPA mobile compliant</li>
 </ul>
 
 Completed Goals
