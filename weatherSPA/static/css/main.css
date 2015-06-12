@@ -12,6 +12,7 @@ body {
     background-color: #E53935;
     padding-top: 10px;
     padding-bottom: 10px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
 /* Header */
@@ -44,28 +45,75 @@ p.navbar-text {
     margin: -5px;
     box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22);
 }
+.navbar ul li a:active {
+    background-color: #E57373;
+}
 
 /* Page Views */
 .page-view > h3 {
     margin-left: 20px;
 }
 
+/* Buttons */
+button#btn-add-new.btn.btn-default {
+    background-color: #536DFE;
+    border-color: #3D5AFE;
+    color: rgba(255,255,255,.7);
+    outline: none;
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+    transition: 0.5s ease-in-out;
+}
+button#btn-add-new.btn.btn-default:hover, button#btn-add-new.btn.btn-default:focus {
+    background-color: #8C9EFF;
+    border-color: #536DFE;
+    color: rgba(0,0,0,.87);
+    box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22);
+}
+button#btn-settings.btn.btn-default {
+    background-color: #536DFE;
+    border-color: #3D5AFE;
+    color: rgba(255,255,255,.7);
+    outline: none;
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+    transition: 0.5s ease-in-out;
+}
+button#btn-settings.btn.btn-default:hover, button#btn-settings.btn.btn-default:focus {
+    background-color: #8C9EFF;
+    border-color: #536DFE;
+    color: rgba(0,0,0,.87);
+    box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22);
+}
+button#btn-settings.btn.btn-default:active, button#btn-add-new.btn.btn-default:active {
+    background-color: #536DFE;
+}
 /* Places List */
 #places-list {
     padding: 20px;
+    // background-color: #fff;
+    // color: rgba(0,0,0,.54);
+    // box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
+// #places-list.clearfix {
+//     width: 80%;
+//     margin-left: auto;
+//     margin-right: auto;
+//     padding: 10px;
+// }
 #places-list .panel {
     width: 300px;
+    height: 725px;
     float: left;
     margin-right: 20px;
     overflow: hidden;
 }
-#place-list .panel .detail {
-    width: 1152px;
-}
-#places-list .panel .panel-body{
-    width: 1136px;
-}
+
+/* Detail Settings - WORK IN PROGRESS */
+// #place-list .panel .detail {
+//     width: 1152px;
+// }
+// #places-list .panel .panel-body{
+//     width: 1136px;
+// }
 /* Modal Window */
 .modal-body, .modal-title {
     padding: 10px;
@@ -74,6 +122,9 @@ p.navbar-text {
 }
 
 /* Forecast Days */
+.panel-heading {
+    background-color: red;
+}
 .forecast-day {
     border: 1px solid #cccccc;
     padding: 10px;
@@ -102,23 +153,30 @@ h3 {
 p#about-p {
     background-color: #fff;
     color: rgba(0,0,0,.54);
-    width: 90%;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
     padding: 10px;
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 p#about-p a {
+    color: #536DFE;
+    text-decoration: none;
+    outline: none;
+    transition: 0.25s ease-in-out;
+}
+p#about-p a:visited {
     color: #8C9EFF;
     text-decoration: underline;
-    outline: none;
-    transition: 0.5s ease-in-out;
 }
 p#about-p a:hover, p#about-p a:focus {
-    color: #536DFE;
+    color: #304FFE;
     background-color: rgba(255,255,255,.7);
     text-decoration: none;
     padding: 3px;
     margin: 2px;
     box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+p#about-p a:active {
+    color: rgba(0,0,0,.57);
 }
