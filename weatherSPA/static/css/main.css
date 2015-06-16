@@ -24,7 +24,7 @@ body {
     margin: 0 10px 10px 10px;
 }
 .navbar a.navbar-brand {
-    color: #FFFFFF;
+    color: #fff;
     outline: none;
 }
 p.navbar-text {
@@ -33,7 +33,6 @@ p.navbar-text {
 }
 .navbar ul li a {
     color: rgba(255,255,255,.7);
-    background-color: #;
     outline: none;
     text-decoration: none;
     transition: 0.5s ease-in-out;
@@ -60,6 +59,7 @@ button#btn-add-new.btn.btn-default {
     border-color: #3D5AFE;
     color: rgba(255,255,255,.7);
     outline: none;
+    position: relative;
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     transition: 0.5s ease-in-out;
 }
@@ -86,25 +86,36 @@ button#btn-settings.btn.btn-default:hover, button#btn-settings.btn.btn-default:f
 button#btn-settings.btn.btn-default:active, button#btn-add-new.btn.btn-default:active {
     background-color: #536DFE;
 }
-/* Places List */
+
+button#btn-expand.close, button#btn-remove.close {
+    color: rgba(0,0,0,.87);
+    outline: none;
+    padding-left: 10px;
+}
+
+/* Places List/Dashboard box */
+
 #places-list {
     padding: 20px;
-    // background-color: #fff;
-    // color: rgba(0,0,0,.54);
-    // box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+    color: rgba(0,0,0,.54);
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
-// #places-list.clearfix {
-//     width: 80%;
-//     margin-left: auto;
-//     margin-right: auto;
-//     padding: 10px;
-// }
+#places-list.clearfix {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
 #places-list .panel {
     width: 300px;
-    height: 725px;
+    // height: 675px;
     float: left;
     margin-right: 20px;
     overflow: hidden;
+}
+#page-dash h3 {
+    color: #fff;
 }
 
 /* Detail Settings - WORK IN PROGRESS */
@@ -114,23 +125,66 @@ button#btn-settings.btn.btn-default:active, button#btn-add-new.btn.btn-default:a
 // #places-list .panel .panel-body{
 //     width: 1136px;
 // }
+
+
 /* Modal Window */
-.modal-body, .modal-title {
+h4.modal-title {
+    background-color: #B71C1C;
+    color: #fff;
     padding: 10px;
-    margin: 10px;
-    background: #FFF;
+}
+.modal-body {
+    background-color: #E53935;
+    color: rgba(255,255,255,.7);
+    padding: 10px;
+}
+span#label {
+    font-size: 10px;
+    text-decoration: none;
+}
+#btn-save, #btn-add {
+    background-color: #536DFE;
+    border-color: #3D5AFE;
+    color: rgba(255,255,255,.7);
+    outline: none;
+    position: relative;
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+    transition: 0.5s ease-in-out;
+}
+#btn-save:hover, #btn-save:focus, #btn-add:hover, #btn-add:focus {
+    background-color: #8C9EFF;
+    border-color: #536DFE;
+    color: rgba(0,0,0,.87);
+    box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22);
 }
 
 /* Forecast Days */
-.panel-heading {
-    background-color: red;
+.panel.panel-info .panel-heading {
+    background-color: #304FFE;
+    border-color: #304FFE;
+    margin: 5px;
+}
+.panel.panel-info {
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}
+h3.panel-title {
+    color: #fff;
 }
 .forecast-day {
-    border: 1px solid #cccccc;
+    border: 1px solid #8C9EFF;
+    color: rgba(0,0,0,.87);
     padding: 10px;
     width: 268px;
     float: left;
     margin-right: 16px;
+    transition: 0.5s ease-in-out;
+}
+.forecast-day:hover, .forecast-day:focus {
+    background-color: #536DFE;
+    color: rgba(255,255,255,.7);
+}
+.forecast-day h3 {
+    margin-top: -1px;
 }
 .forecast-day img{
     float: left;
@@ -147,8 +201,8 @@ button#btn-settings.btn.btn-default:active, button#btn-add-new.btn.btn-default:a
 }
 
 /* About */
-h3 {
-    color: #FFFFFF;
+#page-about h3 {
+    color: #fff;
 }
 p#about-p {
     background-color: #fff;
