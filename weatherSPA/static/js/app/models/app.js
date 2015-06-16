@@ -7,7 +7,7 @@ define([
     var AppModel = Backbone.Model.extend({
         localStorage: new Backbone.LocalStorage("AppSettings"),
         defaults: {
-            'backgroundColor': '#999999',
+            'backgroundColor': '#E53935',
             'celsius': true,
             'welcomeMessage': 'Welcome to Weather Peeks'
         }
