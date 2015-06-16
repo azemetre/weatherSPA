@@ -11,12 +11,12 @@ define([
         html: [
             '<form role="form">',
                 '<div class="form-group">',
-                    '<label for="countryCodeInput">Country Code</label>',
-                    '<input type="text" class="form-control" id="countryCodeInput" placeholder="Enter country code">',
+                    '<label for="countryCodeInput">State Code <span id="label">(ex: FL, CA, TX)</span></label>',
+                    '<input type="text" class="form-control" id="countryCodeInput" placeholder="Enter state code">',
                 '</div>',
                 '<div class="form-group">',
-                    '<label for="nameInput">Place Name</label>',
-                    '<input type="text" class="form-control" id="nameInput" placeholder="Enter the place name">',
+                    '<label for="nameInput">City Name <span id="label">(ex: Tampa or Boston)</span></label>',
+                    '<input type="text" class="form-control" id="nameInput" placeholder="Enter the city name">',
                 '</div>',
                 '<div id="btn-add" class="btn btn-default">Submit</div>',
             '</form>'
